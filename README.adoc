@@ -5,8 +5,7 @@ https://docs.rs/kasedenv[image:https://img.shields.io/docsrs/sqlx?style=for-the-
 
 Read environment variables by lower, upper case or case-insensitive keys.
 
-Unicode support for keys (comparing regardless of case) is enabled through the
-`unicode` feature.
+Unicode support for keys is enabled through the `unicode` feature.
 
 [source,rust]
 ----
