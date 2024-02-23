@@ -1,0 +1,26 @@
+= kasedenv
+
+https://crates.io/crates/kasedenv[image:https://img.shields.io/crates/v/kasedenv?style=for-the-badge&logo=rust[Crates.io Version]]
+https://docs.rs/kasedenv[image:https://img.shields.io/docsrs/sqlx?style=for-the-badge&logo=docs.rs[docs.rs]]
+
+Read environment variables by lower, upper case or case-insensitive keys.
+
+Unicode support for keys (comparing regardless of case) is enabled through the
+`unicode` feature.
+
+[source,rust]
+----
+use unkasedenv::{uncased_var, lower_var, upper_var};
+
+env::set_var("HeLlO", "world");
+assert_eq!(uncased_var("Hello"), Ok("world".to_string()));
+assert_eq!(lower_var("hello"), Ok("world".to_string()));
+assert_eq!(upper_var("HELLO"), Ok("world".to_string()));
+
+/* with `unicode` feature enabled */
+env::set_var("Maße", "42");
+assert_eq!(uncased_var("mAßE"), Ok("42".to_string()));
+assert_eq!(lower_var("maße"), Ok("42".to_string()));
+assert_eq!(upper_var("MASSE"), Ok("42".to_string()));
+----
+

@@ -1,0 +1,15 @@
+[package]
+name = 'kasedenv'
+description = 'Read environment variables by lower, upper case or case-insensitive keys'
+keywords = ['case-insensitive', 'lowercase', 'uppercase', 'env', 'environment']
+repository = 'https://github.com/nc7s/kasedenv'
+license = 'BSD-3-Clause'
+version = '0.1.0'
+edition = '2021'
+
+[dependencies]
+unicase = { version = '2.7.0', optional = true }
+
+[features]
+unicode = ['dep:unicase']
+
